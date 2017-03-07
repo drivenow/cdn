@@ -1,5 +1,6 @@
 #ifndef GRAPH_H
 #define GRAPH_H
+#include <vector>
 
 struct Edge {
         int  index;
@@ -9,22 +10,43 @@ struct Edge {
 };
 
 class Graph {
-private:
-        int vertex_num;
-        int edge_num;
-        vector<Edge*> vertices;
 public:
+	int vertex_num;
+	int edge_num;
+	std::vector<Edge*> vertices;
+
 	Graph(int node_num) : vertex_num(node_num), edge_num(0)
 	{
-		for (unsigned i = 0; i != node_num; ++i) {
+		for (int i = 0; i != node_num; ++i) {
 			vertices.push_back(nullptr);
 		}
 	}
 	inline int get_vertex_num(void) { return this->vertex_num; }
 	inline int get_edge_num(void)   { return this->edge_num; }
+	/*由边的起始和终止位置，在邻接表中查找边信息*/
+	inline Edge* get_edge(int start_point,int end_point){
+		Edge* next = vertices[start_point];
+		while(next!=nullptr){
+			if(next->index==end_point){
+				break;
+			}
+			next = next->next_edge;
+		}
+		if (next==nullptr){
+			printf("targed edge not found!!");
+			return nullptr;
+		}
+		return next;
+	}
 	void CreateFromBuf(char ** buf, int line_num);
 	void Print(void);
 	~Graph();
+};
+
+struct Customer{
+	int start;//消费者
+	int agency;//消费者相连的代理
+	int demand;//消费者需求
 };
 
 #endif

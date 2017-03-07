@@ -5,6 +5,7 @@
  *      Author: full
  */
 #include <vector>
+#include <graph.h>
 using namespace std;
 
 #ifndef CDN_ROUTETRAFFIC_H_
@@ -26,8 +27,6 @@ struct Customer_route{
 	vector<Route_states> route_states;//多条路径信息
 };
 
-
-
-
+int get_traffic_edge(Customer cust, Graph g);
 
 #endif /* CDN_ROUTETRAFFIC_H_ */

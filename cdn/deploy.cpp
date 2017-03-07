@@ -27,10 +27,25 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 	cout << customer_num << endl;
 	server_unit_cost = std::atoi(topo[2]);
 	cout << server_unit_cost << endl;
-
+	//边信息
 	Graph g(node_num);
 	g.CreateFromBuf(topo + 4, link_num);
 	g.Print();
+	Edge *tmp = g.get_edge(0,26);
+	//需求信息
+	vector<Customer> customers(customer_num);
+	char **base_pos = topo + 4 + link_num+1;
+	for(int i=0;i<customer_num-1;i++){
+		string line(base_pos[i]);
+		vector<string> numbers = str_split(line, " ");
+		customers[i].start = std::stoi(numbers[0]);
+		customers[i].agency = std::stoi(numbers[1]);
+		customers[i].demand = std::stoi(numbers[2]);
+	}
+	//服务器集合
+	int servers[3] = {1,11,12};
+
+
 	// 需要输出的内容
 	char * topo_file = (char *)"17\n\n0 8 0 20\n21 8 0 20\n9 11 1 13\n21 22 2 20\n23 22 2 8\n1 3 3 11\n24 3 3 17\n27 3 3 26\n24 3 3 10\n18 17 4 11\n1 19 5 26\n1 16 6 15\n15 13 7 13\n4 5 8 18\n2 25 9 15\n0 7 10 10\n23 24 11 23";
 
