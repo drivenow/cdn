@@ -7,16 +7,14 @@
 #IncludeRegexTransform: 
 
 /home/full/Desktop/SDK-gcc/cdn/RouteTraffic.cpp
-RouteTraffic.h
--
 vector
 -
+iostream
+-
 graph.h
--
-algorithm
--
-iterator
--
+/home/full/Desktop/SDK-gcc/cdn/graph.h
+RouteTraffic.h
+/home/full/Desktop/SDK-gcc/cdn/RouteTraffic.h
 
 /home/full/Desktop/SDK-gcc/cdn/SelectLoc.cpp
 
@@ -66,6 +64,8 @@ strlib.h
 graph.h
 /home/full/Desktop/SDK-gcc/cdn/graph.h
 utility
+-
+algorithm
 -
 
 /home/full/Desktop/SDK-gcc/cdn/io.cpp

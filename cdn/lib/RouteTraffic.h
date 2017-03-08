@@ -26,7 +26,9 @@ struct Customer_route{
 	int agency_point;//消费者节点的代理节点
 	vector<Route_states> route_states;//多条路径信息
 };
-vector<Route_states> get_route(Graph g,Customer cust,int servers[]);
+void PrintRouteStates(const Route_states & route);
+
+vector<Route_states> get_route(Graph & g, const Customer & cust, int  servers[]);
 
 void update_Graph(Graph & g, const Route_states & route_state, int transfer);
 

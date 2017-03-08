@@ -24,6 +24,11 @@ void PrintPath(const vector<int> & nodes_on_path)
 	cout << endl;
 }
 
+void PrintCustomer(const Customer & customer)
+{
+	cout << "index: "  << customer.start << endl;
+	cout << "demand: " << customer.demand << endl;
+}
 
 //你要完成的功能总入口
 void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
@@ -55,6 +60,16 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 		customers[i].agency = std::stoi(numbers[1]);
 		customers[i].demand = std::stoi(numbers[2]);
 	}
+	auto customers_copy(customers);
+	for (auto & c : customers_copy) {
+			PrintCustomer(c);
+		}
+	SortCustomers(customers_copy);
+	cout << "-------------------------------" << endl;
+	for (auto & c : customers_copy) {
+		PrintCustomer(c);
+	}
+
 	//服务器集合
 	int servers[] = {15,16};
 	//寻路
@@ -73,12 +88,10 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 //		cout << "bound: "    << distance_bound[1] << endl;
 //	}
 //	print_time("dij1");
-	Customer cust;
-	cust.start=0;
-	cust.agency = 43;
-	cust.demand=24;
-
-	vector<Route_states> route_states = get_route(g,cust,servers);
+	vector<Route_states> routes = get_route(g, customers[0], servers);
+	for (auto route : routes) {
+		PrintRouteStates(route);
+	}
 
 
 

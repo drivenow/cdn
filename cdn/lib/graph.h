@@ -57,4 +57,6 @@ struct Customer{
 	int demand;//消费者需求
 };
 
+void SortCustomers(std::vector<Customer> &);
+
 #endif

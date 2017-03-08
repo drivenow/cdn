@@ -13,6 +13,15 @@ using std::cout; using std::endl;
 
 #include <utility>
 
+#include <algorithm>
+
+void SortCustomers(vector<Customer> & customers)
+{
+	std::sort(customers.begin(), customers.end(), [](const Customer & a, const Customer & b){
+		return a.demand > b.demand;
+	});
+}
+
 void Graph::CreateFromBuf(char ** buf, int line_num)
 {
         //vector<string> lines;
