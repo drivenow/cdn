@@ -3,6 +3,10 @@
 #include <vector>
 #include <stdio.h>
 
+#include <limits>
+
+#define INF std::numeric_limits<int>::max()
+
 struct Edge {
         int  index;
         Edge *next_edge;
@@ -43,7 +47,7 @@ public:
 	void Print(void);
 	Edge * GetEdgeWithIndex(int src, int dst);
 	std::vector<int> DijkstraShortestPath(int src, int dst);
-	int DijkstraLeastDistance(int src, int dst);
+	std::vector<int> RetrieveDistanceBound(const std::vector<int> & nodes_on_path);
 	~Graph();
 };
 

@@ -13,6 +13,7 @@ CMakeFiles/cdn.dir/cdn.cpp.o: /home/full/Desktop/SDK-gcc/cdn/lib/lib_io.h
 CMakeFiles/cdn.dir/cdn.cpp.o: /home/full/Desktop/SDK-gcc/cdn/lib/lib_time.h
 
 CMakeFiles/cdn.dir/deploy.cpp.o: /home/full/Desktop/SDK-gcc/cdn/deploy.cpp
+CMakeFiles/cdn.dir/deploy.cpp.o: /home/full/Desktop/SDK-gcc/cdn/lib/RouteTraffic.h
 CMakeFiles/cdn.dir/deploy.cpp.o: /home/full/Desktop/SDK-gcc/cdn/lib/deploy.h
 CMakeFiles/cdn.dir/deploy.cpp.o: /home/full/Desktop/SDK-gcc/cdn/lib/graph.h
 CMakeFiles/cdn.dir/deploy.cpp.o: /home/full/Desktop/SDK-gcc/cdn/lib/lib_io.h

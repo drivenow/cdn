@@ -5,6 +5,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include <RouteTraffic.h>
 using std::string;
 
 #include <vector>
@@ -47,7 +48,7 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 	//需求信息
 	vector<Customer> customers(customer_num);
 	char **base_pos = topo + 4 + link_num+1;
-	for(int i=0;i<customer_num-1;i++){
+	for(int i=0;i<customer_num;i++){
 		string line(base_pos[i]);
 		vector<string> numbers = str_split(line, " ");
 		customers[i].start = std::stoi(numbers[0]);
@@ -55,18 +56,30 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 		customers[i].demand = std::stoi(numbers[2]);
 	}
 	//服务器集合
-	int servers[3] = {1,11,12};
+	int servers[] = {15,16};
 	//寻路
-	print_time("dij");
-	srand(time(NULL));
-	for(int i=0;i<1000;i++){
-		int begin = rand() % node_num;
-		int end = rand() % node_num;
-		vector<int> nodes_on_path = g.DijkstraShortestPath(begin, end);
-		PrintPath(nodes_on_path);
-		cout << g.DijkstraLeastDistance(begin, end) << endl;
-	}
-	print_time("dij1");
+//	print_time("dij");
+//	srand(time(NULL));
+//	for(int i=0;i<1000;i++){
+//		int begin = rand() % node_num;
+//		int end = rand() % node_num;
+//		vector<int> nodes_on_path = g.DijkstraShortestPath(begin, end);
+//		if (nodes_on_path.size()==1){
+//			cout<<"no route from "<<begin<<" to "<<end<<endl;
+//		}
+//		PrintPath(nodes_on_path);
+//		vector<int> distance_bound = g.RetrieveDistanceBound(nodes_on_path);
+//		cout << "distance: " << distance_bound[0] << endl;
+//		cout << "bound: "    << distance_bound[1] << endl;
+//	}
+//	print_time("dij1");
+	Customer cust;
+	cust.start=0;
+	cust.agency = 43;
+	cust.demand=24;
+
+	vector<Route_states> route_states = get_route(g,cust,servers);
+
 
 
 	// 需要输出的内容

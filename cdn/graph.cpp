@@ -11,11 +11,7 @@ using std::cout; using std::endl;
 
 #include "graph.h"
 
-#include <limits>
-
 #include <utility>
-
-#define INF std::numeric_limits<int>::max()
 
 void Graph::CreateFromBuf(char ** buf, int line_num)
 {
@@ -174,20 +170,23 @@ Edge * Graph::GetEdgeWithIndex(int src, int dst)
         }
 }
 
-int Graph::DijkstraLeastDistance(int src, int dst)
+
+vector<int> Graph::RetrieveDistanceBound(const vector<int> & nodes_on_path)
 {
-        vector<int> nodes_on_path = this->DijkstraShortestPath(src, dst);
         edge_num = nodes_on_path.size() - 1;
         Edge * edge;
         int begin, end;
-        int dist_sum = 0;
+        int dist_sum = 0, bound = INF;
         for (int i = 0; i != edge_num; ++i) {
                 begin = nodes_on_path[i];
                 end = nodes_on_path[i + 1];
                 edge = GetEdgeWithIndex(begin, end);
                 cout << edge->unit_cost << " + ";
                 dist_sum += edge->unit_cost;
+                if (edge->band_width < bound) {
+                        bound = edge->band_width;
+                }
         }
         cout << endl;
-        return dist_sum;
+        return { dist_sum, bound };
 }
