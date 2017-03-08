@@ -31,9 +31,15 @@ deploy.h
 /home/full/Desktop/SDK-gcc/cdn/deploy.h
 strlib.h
 /home/full/Desktop/SDK-gcc/cdn/strlib.h
+lib_time.h
+/home/full/Desktop/SDK-gcc/cdn/lib_time.h
 stdio.h
 -
 string
+-
+stdlib.h
+-
+time.h
 -
 vector
 -
@@ -53,6 +59,10 @@ strlib.h
 /home/full/Desktop/SDK-gcc/cdn/strlib.h
 graph.h
 /home/full/Desktop/SDK-gcc/cdn/graph.h
+limits
+-
+utility
+-
 
 /home/full/Desktop/SDK-gcc/cdn/io.cpp
 stdio.h
@@ -86,6 +96,8 @@ lib_io.h
 
 /home/full/Desktop/SDK-gcc/cdn/lib/graph.h
 vector
+-
+stdio.h
 -
 
 /home/full/Desktop/SDK-gcc/cdn/lib/lib_io.h

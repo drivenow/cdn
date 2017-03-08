@@ -1,6 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 #include <vector>
+#include <stdio.h>
 
 struct Edge {
         int  index;
@@ -40,6 +41,9 @@ public:
 	}
 	void CreateFromBuf(char ** buf, int line_num);
 	void Print(void);
+	Edge * GetEdgeWithIndex(int src, int dst);
+	std::vector<int> DijkstraShortestPath(int src, int dst);
+	int DijkstraLeastDistance(int src, int dst);
 	~Graph();
 };
 

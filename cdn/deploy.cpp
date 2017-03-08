@@ -1,7 +1,10 @@
 #include "deploy.h"
 #include "strlib.h"
+#include "lib_time.h"
 #include <stdio.h>
 #include <string>
+#include <stdlib.h>
+#include <time.h>
 using std::string;
 
 #include <vector>
@@ -11,6 +14,15 @@ using std::vector;
 using std::cout; using std::endl;
 
 #include "graph.h"
+
+void PrintPath(const vector<int> & nodes_on_path)
+{
+	for (auto & index : nodes_on_path) {
+		cout << index << " ";
+	}
+	cout << endl;
+}
+
 
 //你要完成的功能总入口
 void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
@@ -44,6 +56,17 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 	}
 	//服务器集合
 	int servers[3] = {1,11,12};
+	//寻路
+	print_time("dij");
+	srand(time(NULL));
+	for(int i=0;i<1000;i++){
+		int begin = rand() % node_num;
+		int end = rand() % node_num;
+		vector<int> nodes_on_path = g.DijkstraShortestPath(begin, end);
+		PrintPath(nodes_on_path);
+		cout << g.DijkstraLeastDistance(begin, end) << endl;
+	}
+	print_time("dij1");
 
 
 	// 需要输出的内容
