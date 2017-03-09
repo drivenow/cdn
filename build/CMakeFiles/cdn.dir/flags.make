@@ -6,5 +6,5 @@ CXX_FLAGS =  -O0 -Wall -g -ggdb -std=c++11
 
 CXX_DEFINES = -D_DEBUG
 
-CXX_INCLUDES = -I/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/lib 
+CXX_INCLUDES = -I/home/full/Desktop/SDK-gcc/cdn/lib 
 

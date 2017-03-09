@@ -262,36 +262,21 @@
 <pathentry kind="mac" name="__STDC_ISO_10646__" path="" value="201505L"/>
 <pathentry kind="mac" name="__STDC_NO_THREADS__" path="" value="1"/>
 <pathentry kind="mac" name="__cplusplus" path="" value="199711L"/>
-<pathentry kind="mac" name="__GNUG__" path="" value="5"/>
-<pathentry kind="mac" name="__has_include(STR)" path="" value="__has_include__(STR)"/>
-<pathentry kind="mac" name="__has_include_next(STR)" path="" value="__has_include_next__(STR)"/>
+<pathentry kind="mac" name="__GNUG__" path="" value="4"/>
 <pathentry kind="mac" name="__GXX_WEAK__" path="" value="1"/>
 <pathentry kind="mac" name="__DEPRECATED" path="" value="1"/>
 <pathentry kind="mac" name="__GXX_RTTI" path="" value="1"/>
-<pathentry kind="mac" name="__cpp_rtti" path="" value="199711"/>
-<pathentry kind="mac" name="__cpp_binary_literals" path="" value="201304"/>
-<pathentry kind="mac" name="__cpp_runtime_arrays" path="" value="198712"/>
 <pathentry kind="mac" name="__EXCEPTIONS" path="" value="1"/>
-<pathentry kind="mac" name="__cpp_exceptions" path="" value="199711"/>
-<pathentry kind="mac" name="__GLIBCXX_TYPE_INT_N_0" path="" value="__int128"/>
-<pathentry kind="mac" name="__GLIBCXX_BITSIZE_INT_N_0" path="" value="128"/>
-<pathentry kind="mac" name="__GCC_IEC_559" path="" value="2"/>
-<pathentry kind="mac" name="__GCC_IEC_559_COMPLEX" path="" value="2"/>
-<pathentry kind="mac" name="__SSP_STRONG__" path="" value="3"/>
-<pathentry kind="mac" name="__SIZEOF_FLOAT80__" path="" value="16"/>
-<pathentry kind="mac" name="__SIZEOF_FLOAT128__" path="" value="16"/>
 <pathentry kind="mac" name="_GNU_SOURCE" path="" value="1"/>
-<pathentry include="/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/lib" kind="inc" path="" system="true"/>
+<pathentry include="/home/full/Desktop/SDK-gcc/cdn/lib" kind="inc" path="" system="true"/>
 <pathentry include="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/local/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/x86_64-linux-gnu" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include" kind="inc" path="" system="true"/>
-<pathentry include="/usr/include/c++/5" kind="inc" path="" system="true"/>
-<pathentry include="/usr/include/x86_64-linux-gnu/c++/5" kind="inc" path="" system="true"/>
-<pathentry include="/usr/include/c++/5/backward" kind="inc" path="" system="true"/>
-<pathentry include="/usr/lib/gcc/x86_64-linux-gnu/5/include" kind="inc" path="" system="true"/>
-<pathentry include="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" kind="inc" path="" system="true"/>
+<pathentry include="/usr/include/c++/4.8" kind="inc" path="" system="true"/>
+<pathentry include="/usr/include/x86_64-linux-gnu/c++/4.8" kind="inc" path="" system="true"/>
+<pathentry include="/usr/include/c++/4.8/backward" kind="inc" path="" system="true"/>
 </storageModule>
 <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
 <buildTargets>
@@ -325,14 +310,14 @@
 </target>
 <target name="Build" path="[Targets]/[exe] cdn" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/make</buildCommand>
-<buildArguments>-C "/home/full/Desktop/SDK-gcc/SDK-gcc/build" -j2</buildArguments>
+<buildArguments>-C "/home/full/Desktop/SDK-gcc/build" -j2</buildArguments>
 <buildTarget>cdn</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
 <target name="Clean" path="[Targets]/[exe] cdn" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/cmake</buildCommand>
-<buildArguments>-E chdir "/home/full/Desktop/SDK-gcc/SDK-gcc/build" "/usr/bin/cmake" -P "CMakeFiles/cdn.dir/cmake_clean.cmake"</buildArguments>
+<buildArguments>-E chdir "/home/full/Desktop/SDK-gcc/build" "/usr/bin/cmake" -P "CMakeFiles/cdn.dir/cmake_clean.cmake"</buildArguments>
 <buildTarget></buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>

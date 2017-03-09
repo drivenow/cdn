@@ -51,7 +51,7 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 	Graph g(node_num);
 	g.CreateFromBuf(topo + 4, link_num);
 	//g.Print();
-	Edge *tmp = g.get_edge(0,26);
+	//Edge *tmp = g.get_edge(0,26);
 	//需求信息
 	vector<Customer> customers(customer_num);
 	char **base_pos = topo + 4 + link_num+1;
@@ -66,9 +66,9 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 
 
 	//服务器集合
-//	vector<int> servers{ 9, 20, 8, 2, 4, 40, 16 };
-	ServerLoc serverloc = ServerLoc(4, node_num);
-	serverloc.SelectLoc(g, node_num, 4);
+	vector<int> servers{ 9, 20, 8, 2, 4, 40, 16 };
+	//ServerLoc serverloc = ServerLoc(4, node_num);
+	//serverloc.SelectLoc(g, node_num, 4);
 
 	//寻路
 //	print_time("dij");
@@ -96,7 +96,7 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 	//选路
 	int total_traffic = 0;
 	vector<Route_transfer> route_transfers;
-	//select_route(customers, serverloc.servers, g, total_traffic, route_transfers);
+	select_route(customers, servers, g, total_traffic, route_transfers);
 
 
 	// 需要输出的内容

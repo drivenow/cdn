@@ -15,7 +15,7 @@ using std::cout; using std::endl;
 
 #include <algorithm>
 
-#define MAX_MEDIAN 4 //对同一个start_segment选择几条median_segment路线
+#define MAX_MEDIAN 2 //对同一个start_segment选择几条median_segment路线
 
 
 void SortRoute_states(std::vector<Route_states> & routes)
@@ -47,7 +47,7 @@ vector<Route_states> get_route(Graph & g, const Customer & cust, const vector<in
 
 		int push_num = 0;  //加到median_segments中的数据个数
 
-		int is_server = false;
+		bool is_server = false;
 
 		for (int i = 0; i < server_num; i++) {
 			if (start_point == servers[i]) {
@@ -61,21 +61,29 @@ vector<Route_states> get_route(Graph & g, const Customer & cust, const vector<in
 			distance_bound[0] += cost_init;
 			// 判断路径中是否有服务器不在端点
 			bool is_there_server = false;
+			bool is_there_agency = false;
 			int node_num = nodes_on_path.size();
+			//nodes_on_path是否有服务器、代理点
 			for (int j = 0; j != server_num; ++j) {
 				for (int k = 1; k != node_num; ++k) {
 					if (nodes_on_path[k] == servers[j]) {
 						is_there_server = true;
 						break;
 					}
+					if (nodes_on_path[k] == cust.agency) {
+						is_there_agency = true;
+						break;
+					}
 				}
-				if (is_there_server) {
+				if (is_there_server || is_there_agency) {
 					break;
 				}
 			}
-			if (is_there_server) {
-				continue;
+			if (is_there_server || is_there_agency) {
+				continue;//跳过
 			}
+
+			//**********************************************************
 			if (push_num < MAX_MEDIAN) {
 				median_segments.push_back(nodes_on_path);
 				distance_bounds.push_back(distance_bound);
@@ -109,7 +117,7 @@ vector<Route_states> get_route(Graph & g, const Customer & cust, const vector<in
 			} else {
 				route.traffic = cost_init;
 				route.limit_all = route.limit_entra;
-				route.median_segment = {};
+				route.median_segment = { start_point };
 			}
 			routes.push_back(route);
 		}
@@ -153,7 +161,7 @@ void update_Graph(Graph & g, const Route_states & route_state, int transfer)
 	Edge *edge = g.GetEdgeWithIndex(route_state.start_segment[0], route_state.start_segment[1]);//反向路径
 	edge->band_width = edge->band_width - transfer;
 	int mediean_edge_num = route_state.median_segment.size() - 1;
-	if (mediean_edge_num != -1) {
+	if (mediean_edge_num != 0) {
 		for (int i = 0; i != mediean_edge_num; ++i) {
 			edge = g.GetEdgeWithIndex(route_state.median_segment[i], route_state.median_segment[i + 1]);
 			edge->band_width = edge->band_width - transfer;
@@ -185,6 +193,7 @@ void select_route(vector<Customer> & customers, const vector<int> & servers,Grap
 		//customer = customers[i];
 		cout << "------------------" << endl;
 		cout << "demand: " << customer.demand << endl;
+		cout << endl;
 		vector<Route_states> routes = get_route(g, customer, servers);
 		SortRoute_states(routes);
 		//cout << "before while" << endl;
@@ -195,7 +204,7 @@ void select_route(vector<Customer> & customers, const vector<int> & servers,Grap
 			//cout << "within while" << endl;
 			if (i > 0) {
 				routes[i].limit_entra = g.get_edge(routes[i].start_segment[0], customer.agency)->band_width;
-				if (routes[i].median_segment.empty()) {
+				if (routes[i].median_segment.size() == 1) {
 					routes[i].limit_all = routes[i].limit_entra;
 				} else {
 					vector<int> distance_bound = g.RetrieveDistanceBound(routes[i].median_segment);
@@ -219,17 +228,19 @@ void select_route(vector<Customer> & customers, const vector<int> & servers,Grap
 			//cout << "within while" << endl;
 			route_transfer.segment = routes[i].median_segment;
 			route_transfer.segment.push_back(routes[i].start_segment[1]);
-			route_transfer.segment.push_back(customer.start);
+			//route_transfer.segment.push_back(customer.start);
 			route_transfer.transfer = traffic_transfer[1];
 			route_transfers.push_back(route_transfer);
 			i += 1;
 
-			cout<< "demand: "  << customer.demand << endl;
-			cout<< "traffic: " << traffic_transfer[0] << endl;
-			cout<< "transfer: "<< traffic_transfer[1] << endl;
 			for (const auto & j : route_transfer.segment){
 				cout << j << " to ";
 			}
+			cout << "customer " << customer.start << endl;
+			cout<< "demand: "  << customer.demand << endl;
+			cout<< "traffic: " << traffic_transfer[0] << endl;
+			cout<< "transfer: "<< traffic_transfer[1] << endl;
+
 			cout << endl;
 			if (customer.demand == 0) {
 				break;
