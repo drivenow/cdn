@@ -25,6 +25,20 @@ void SortRoute_states(std::vector<Route_states> & routes)
 	});
 }
 
+bool limit_all_segment_shared(std::vector<vector<int>> median_segments,vector<int> limit_all_segment,int &target){
+	int route_num = median_segments.size();
+	for(int i=0;i<route_num;i++){
+		int median_segments_num = median_segments[i].size();
+		for(int j=0;j<median_segments_num-1;j++){
+			if(median_segments[i][j]==limit_all_segment[0] && median_segments[i][j+1]==limit_all_segment[1]){
+				target = i;//记录哪一条路线有重复
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 /*
  * 返回从消费者出发到服务器的最短路径
  * Customer cust:单个消费者节点
@@ -41,6 +55,7 @@ vector<Route_states> get_route(Graph & g, const Customer & cust, const vector<in
 		int cost_init = g.GetEdgeWithIndex(start_point, cust.agency)->unit_cost;  //起始代价（代理上一个点到代理的代价）
 		std::vector<vector<int>> median_segments;  //临时储存到每个服务器的路径
 		std::vector<vector<int>> distance_bounds;
+		std::vector<vector<int>> limit_all_segments;
 
 		//int dist_min2_max;
 		//int dist_min2_min;
@@ -57,7 +72,15 @@ vector<Route_states> get_route(Graph & g, const Customer & cust, const vector<in
 			}
 			// 从服务器到代理上一个点的路径
 			vector<int> nodes_on_path  = g.DijkstraShortestPath(servers[i], start_point);
-			vector<int> distance_bound = g.RetrieveDistanceBound(nodes_on_path);
+			vector<int> limit_all_segment(2);
+			vector<int> distance_bound = g.RetrieveDistanceBound(nodes_on_path,limit_all_segment);
+			int limit_entra = g.GetEdgeWithIndex(start_point, cust.agency)->band_width;
+			//获取全路径流量上限
+			if(distance_bound[1]>limit_entra){
+				limit_all_segment[0] = start_point;
+				limit_all_segment[1] = cust.agency;
+				distance_bound[1] = limit_entra;
+			}
 			distance_bound[0] += cost_init;
 			// 判断路径中是否有服务器不在端点
 			bool is_there_server = false;
@@ -82,21 +105,33 @@ vector<Route_states> get_route(Graph & g, const Customer & cust, const vector<in
 			if (is_there_server || is_there_agency) {
 				continue;//跳过
 			}
+			//判断limit_all_segment是否被共享
 
 			//**********************************************************
-			if (push_num < MAX_MEDIAN) {
-				median_segments.push_back(nodes_on_path);
-				distance_bounds.push_back(distance_bound);
-				push_num += 1;
-			} else {
-				auto iter_max_distance = std::max_element(distance_bounds.begin(), distance_bounds.end(),
-						[](const vector<int> & a, const vector<int> & b) {
-						return a[0] < b[0];
-				});
-				auto index_max_distance = iter_max_distance - distance_bounds.begin();
-				if ((*iter_max_distance)[0] > distance_bound[0]) {
-					*iter_max_distance = distance_bound;
-					median_segments[index_max_distance] = nodes_on_path;
+			int target = -1;//记录哪一条路线有重复
+			if(limit_all_segment_shared(median_segments,limit_all_segment,target)==true){
+				if(distance_bound[0] < distance_bounds[target][0]){
+					distance_bounds[target] = distance_bound;
+					median_segments[target] = nodes_on_path;
+					limit_all_segments[target] = limit_all_segment;
+				}
+			}
+			else{
+				if (push_num < MAX_MEDIAN) {
+					median_segments.push_back(nodes_on_path);
+					distance_bounds.push_back(distance_bound);
+					limit_all_segments.push_back(limit_all_segment);
+					push_num += 1;
+				} else {
+					auto iter_max_distance = std::max_element(distance_bounds.begin(), distance_bounds.end(),
+							[](const vector<int> & a, const vector<int> & b) {
+							return a[0] < b[0];
+					});
+					auto index_max_distance = iter_max_distance - distance_bounds.begin();
+					if ((*iter_max_distance)[0] > distance_bound[0]) {
+						*iter_max_distance = distance_bound;
+						median_segments[index_max_distance] = nodes_on_path;
+					}
 				}
 			}
 		}
@@ -114,10 +149,12 @@ vector<Route_states> get_route(Graph & g, const Customer & cust, const vector<in
 					route.limit_all = route.limit_entra;
 				}
 				route.median_segment = median_segments[i];
+				route.limit_all_segment = limit_all_segments[i];
 			} else {
 				route.traffic = cost_init;
 				route.limit_all = route.limit_entra;
 				route.median_segment = { start_point };
+				//未存limit_all_segment
 			}
 			routes.push_back(route);
 		}
@@ -201,13 +238,14 @@ void select_route(vector<Customer> & customers, const vector<int> & servers,Grap
 
 		for (int i = 0; i != route_num; ) {
 		//while(customer.demand>0 && route_num<routes.size()){
-			//cout << "within while" << endl;
 			if (i > 0) {
 				routes[i].limit_entra = g.get_edge(routes[i].start_segment[0], customer.agency)->band_width;
 				if (routes[i].median_segment.size() == 1) {
 					routes[i].limit_all = routes[i].limit_entra;
+//					routes[i].limit_all_segment = routes[i].start_segment;
 				} else {
-					vector<int> distance_bound = g.RetrieveDistanceBound(routes[i].median_segment);
+					vector<int> limit_all_segment(2);
+					vector<int> distance_bound = g.RetrieveDistanceBound(routes[i].median_segment,limit_all_segment);
 					if (routes[i].limit_entra > distance_bound[1]) {
 						routes[i].limit_all = distance_bound[1];//有共享路段时，更新上限
 					} else {

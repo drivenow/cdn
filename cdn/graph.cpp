@@ -180,7 +180,7 @@ Edge * Graph::GetEdgeWithIndex(int src, int dst)
 }
 
 
-vector<int> Graph::RetrieveDistanceBound(const vector<int> & nodes_on_path)
+vector<int> Graph::RetrieveDistanceBound(const vector<int> & nodes_on_path, vector<int> & bound_segment)
 {
         edge_num = nodes_on_path.size() - 1;
         Edge * edge;
@@ -194,6 +194,8 @@ vector<int> Graph::RetrieveDistanceBound(const vector<int> & nodes_on_path)
                 dist_sum += edge->unit_cost;
                 if (edge->band_width < bound) {
                         bound = edge->band_width;
+                        bound_segment[0] = begin;
+                        bound_segment[1] = end;
                 }
         }
         //cout << endl;
