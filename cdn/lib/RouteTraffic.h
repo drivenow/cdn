@@ -20,6 +20,11 @@ struct Route_states{
 	int limit_entra;//入口段的流量上限
 };
 
+struct Route_transfer{
+	std::vector<int> segment;//传输路径
+	int transfer; //传输量
+};
+
 
 struct Customer_route{
 	int start_point;//消费者节点
@@ -28,11 +33,16 @@ struct Customer_route{
 };
 void PrintRouteStates(const Route_states & route);
 
-vector<Route_states> get_route(Graph & g, const Customer & cust, int  servers[]);
+void select_route(vector<Customer> & customers, const vector<int> & servers,Graph & g,int & total_traffic,vector<Route_transfer> & route_transfers);
+
+vector<Route_states> get_route(Graph & g, const Customer & cust, const std::vector<int> & servers);
 
 void update_Graph(Graph & g, const Route_states & route_state, int transfer);
 
-int get_traffic_route(const Customer & cust, const Route_states & route_state,
-                      Graph & g, vector<Customer> & customers);
+vector<int> get_route_traffic(Customer & cust, const Route_states & route_state, Graph & g);
+
+void SortRoute_states(std::vector<Route_states> &);
+
+void select_route(vector<Customer> & customers,int servers[],Graph & g,int & total_traffic,vector<Route_transfer> & route_transfers);
 
 #endif /* CDN_ROUTETRAFFIC_H_ */

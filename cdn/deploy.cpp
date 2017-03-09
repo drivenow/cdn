@@ -48,7 +48,7 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 	//边信息
 	Graph g(node_num);
 	g.CreateFromBuf(topo + 4, link_num);
-	g.Print();
+	//g.Print();
 	Edge *tmp = g.get_edge(0,26);
 	//需求信息
 	vector<Customer> customers(customer_num);
@@ -60,18 +60,11 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 		customers[i].agency = std::stoi(numbers[1]);
 		customers[i].demand = std::stoi(numbers[2]);
 	}
-	auto customers_copy(customers);
-	for (auto & c : customers_copy) {
-			PrintCustomer(c);
-		}
-	SortCustomers(customers_copy);
-	cout << "-------------------------------" << endl;
-	for (auto & c : customers_copy) {
-		PrintCustomer(c);
-	}
+	SortCustomers(customers);//按需求降序排列
+
 
 	//服务器集合
-	int servers[] = {15,16};
+	vector<int> servers{ 9, 20, 8, 2, 4, 40, 16 };
 	//寻路
 //	print_time("dij");
 //	srand(time(NULL));
@@ -88,11 +81,17 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 //		cout << "bound: "    << distance_bound[1] << endl;
 //	}
 //	print_time("dij1");
-	vector<Route_states> routes = get_route(g, customers[0], servers);
-	for (auto route : routes) {
-		PrintRouteStates(route);
-	}
+//	for (auto customer : customers) {
+//		vector<Route_states> routes = get_route(g, customer, servers);
+//		for (auto route : routes) {
+//			PrintRouteStates(route);
+//		}
+//	}
 
+	//选路
+	int total_traffic = 0;
+	vector<Route_transfer> route_transfers;
+	select_route(customers,servers,g, total_traffic, route_transfers);
 
 
 	// 需要输出的内容

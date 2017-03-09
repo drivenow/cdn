@@ -190,12 +190,12 @@ vector<int> Graph::RetrieveDistanceBound(const vector<int> & nodes_on_path)
                 begin = nodes_on_path[i];
                 end = nodes_on_path[i + 1];
                 edge = GetEdgeWithIndex(begin, end);
-                cout << edge->unit_cost << " + ";
+                //cout << edge->unit_cost << " + ";
                 dist_sum += edge->unit_cost;
                 if (edge->band_width < bound) {
                         bound = edge->band_width;
                 }
         }
-        cout << endl;
+        //cout << endl;
         return { dist_sum, bound };
 }
