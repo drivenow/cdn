@@ -90,3 +90,11 @@ void ServerLoc::serverMutation(int serversbak_num){
 
 }
 
+//从servers 中提取servers的ID
+//返回值： vector<int> serversid
+int ServerLoc::getServers(vector<int> &a){
+	for(int i = 0; i< servers.size(); i++){
+		a.push_back(servers[i].server_id);
+	}
+	return 0;
+}

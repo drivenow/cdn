@@ -42,6 +42,7 @@ public:
 	//选择服务器位置, 写入servers, 返回备用服务器集合
 	void SelectLoc(Graph g, int node_num, int servernum);
 
+	int getServers(vector<int> & servers);
 
 };
 #endif /* CDN_SELECTLOC_H_ */
