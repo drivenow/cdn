@@ -47,7 +47,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildLocation</key>
-					<value>/home/full/Desktop/SDK-gcc/build</value>
+					<value>/home/full/Desktop/SDK-gcc/SDK-gcc/build</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
@@ -83,7 +83,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.build.location</key>
-					<value>/home/full/Desktop/SDK-gcc/build</value>
+					<value>/home/full/Desktop/SDK-gcc/SDK-gcc/build</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
@@ -111,7 +111,7 @@
 		<link>
 			<name>[Source directory]</name>
 			<type>2</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn</location>
 		</link>
 		<link>
 			<name>[Subprojects]</name>
@@ -121,7 +121,7 @@
 		<link>
 			<name>[Subprojects]/cdn</name>
 			<type>2</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn</location>
 		</link>
 		<link>
 			<name>[Targets]</name>
@@ -146,37 +146,37 @@
 		<link>
 			<name>[Targets]/[exe] cdn/Source Files/graph.cpp</name>
 			<type>1</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn/graph.cpp</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/graph.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] cdn/Source Files/io.cpp</name>
 			<type>1</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn/io.cpp</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/io.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] cdn/Source Files/cdn.cpp</name>
 			<type>1</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn/cdn.cpp</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/cdn.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] cdn/Source Files/deploy.cpp</name>
 			<type>1</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn/deploy.cpp</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/deploy.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] cdn/Source Files/strlib.cc</name>
 			<type>1</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn/strlib.cc</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/strlib.cc</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] cdn/Source Files/SelectLoc.cpp</name>
 			<type>1</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn/SelectLoc.cpp</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/SelectLoc.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] cdn/Source Files/RouteTraffic.cpp</name>
 			<type>1</type>
-			<location>/home/full/Desktop/SDK-gcc/cdn/RouteTraffic.cpp</location>
+			<location>/home/full/Desktop/SDK-gcc/SDK-gcc/cdn/RouteTraffic.cpp</location>
 		</link>
 		<link>
 			<name>[Targets]/[exe] cdn/Header Files</name>

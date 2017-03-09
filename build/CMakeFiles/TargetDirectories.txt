@@ -1,3 +1,3 @@
-/home/full/Desktop/SDK-gcc/build/CMakeFiles/edit_cache.dir
-/home/full/Desktop/SDK-gcc/build/CMakeFiles/rebuild_cache.dir
-/home/full/Desktop/SDK-gcc/build/CMakeFiles/cdn.dir
+/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles/edit_cache.dir
+/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles/rebuild_cache.dir
+/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles/cdn.dir

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/full/Desktop/SDK-gcc/cdn
+CMAKE_SOURCE_DIR = /home/full/Desktop/SDK-gcc/SDK-gcc/cdn
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/full/Desktop/SDK-gcc/build
+CMAKE_BINARY_DIR = /home/full/Desktop/SDK-gcc/SDK-gcc/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cdn.dir/depend.make
@@ -58,17 +58,17 @@ include CMakeFiles/cdn.dir/progress.make
 include CMakeFiles/cdn.dir/flags.make
 
 CMakeFiles/cdn.dir/graph.cpp.o: CMakeFiles/cdn.dir/flags.make
-CMakeFiles/cdn.dir/graph.cpp.o: /home/full/Desktop/SDK-gcc/cdn/graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cdn.dir/graph.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/graph.cpp.o -c /home/full/Desktop/SDK-gcc/cdn/graph.cpp
+CMakeFiles/cdn.dir/graph.cpp.o: /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cdn.dir/graph.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/graph.cpp.o -c /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/graph.cpp
 
 CMakeFiles/cdn.dir/graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cdn.dir/graph.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/cdn/graph.cpp > CMakeFiles/cdn.dir/graph.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/graph.cpp > CMakeFiles/cdn.dir/graph.cpp.i
 
 CMakeFiles/cdn.dir/graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cdn.dir/graph.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/cdn/graph.cpp -o CMakeFiles/cdn.dir/graph.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/graph.cpp -o CMakeFiles/cdn.dir/graph.cpp.s
 
 CMakeFiles/cdn.dir/graph.cpp.o.requires:
 
@@ -82,17 +82,17 @@ CMakeFiles/cdn.dir/graph.cpp.o.provides.build: CMakeFiles/cdn.dir/graph.cpp.o
 
 
 CMakeFiles/cdn.dir/io.cpp.o: CMakeFiles/cdn.dir/flags.make
-CMakeFiles/cdn.dir/io.cpp.o: /home/full/Desktop/SDK-gcc/cdn/io.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cdn.dir/io.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/io.cpp.o -c /home/full/Desktop/SDK-gcc/cdn/io.cpp
+CMakeFiles/cdn.dir/io.cpp.o: /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cdn.dir/io.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/io.cpp.o -c /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/io.cpp
 
 CMakeFiles/cdn.dir/io.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cdn.dir/io.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/cdn/io.cpp > CMakeFiles/cdn.dir/io.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/io.cpp > CMakeFiles/cdn.dir/io.cpp.i
 
 CMakeFiles/cdn.dir/io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cdn.dir/io.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/cdn/io.cpp -o CMakeFiles/cdn.dir/io.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/io.cpp -o CMakeFiles/cdn.dir/io.cpp.s
 
 CMakeFiles/cdn.dir/io.cpp.o.requires:
 
@@ -106,17 +106,17 @@ CMakeFiles/cdn.dir/io.cpp.o.provides.build: CMakeFiles/cdn.dir/io.cpp.o
 
 
 CMakeFiles/cdn.dir/cdn.cpp.o: CMakeFiles/cdn.dir/flags.make
-CMakeFiles/cdn.dir/cdn.cpp.o: /home/full/Desktop/SDK-gcc/cdn/cdn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cdn.dir/cdn.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/cdn.cpp.o -c /home/full/Desktop/SDK-gcc/cdn/cdn.cpp
+CMakeFiles/cdn.dir/cdn.cpp.o: /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/cdn.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cdn.dir/cdn.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/cdn.cpp.o -c /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/cdn.cpp
 
 CMakeFiles/cdn.dir/cdn.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cdn.dir/cdn.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/cdn/cdn.cpp > CMakeFiles/cdn.dir/cdn.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/cdn.cpp > CMakeFiles/cdn.dir/cdn.cpp.i
 
 CMakeFiles/cdn.dir/cdn.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cdn.dir/cdn.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/cdn/cdn.cpp -o CMakeFiles/cdn.dir/cdn.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/cdn.cpp -o CMakeFiles/cdn.dir/cdn.cpp.s
 
 CMakeFiles/cdn.dir/cdn.cpp.o.requires:
 
@@ -130,17 +130,17 @@ CMakeFiles/cdn.dir/cdn.cpp.o.provides.build: CMakeFiles/cdn.dir/cdn.cpp.o
 
 
 CMakeFiles/cdn.dir/deploy.cpp.o: CMakeFiles/cdn.dir/flags.make
-CMakeFiles/cdn.dir/deploy.cpp.o: /home/full/Desktop/SDK-gcc/cdn/deploy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cdn.dir/deploy.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/deploy.cpp.o -c /home/full/Desktop/SDK-gcc/cdn/deploy.cpp
+CMakeFiles/cdn.dir/deploy.cpp.o: /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/deploy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cdn.dir/deploy.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/deploy.cpp.o -c /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/deploy.cpp
 
 CMakeFiles/cdn.dir/deploy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cdn.dir/deploy.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/cdn/deploy.cpp > CMakeFiles/cdn.dir/deploy.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/deploy.cpp > CMakeFiles/cdn.dir/deploy.cpp.i
 
 CMakeFiles/cdn.dir/deploy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cdn.dir/deploy.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/cdn/deploy.cpp -o CMakeFiles/cdn.dir/deploy.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/deploy.cpp -o CMakeFiles/cdn.dir/deploy.cpp.s
 
 CMakeFiles/cdn.dir/deploy.cpp.o.requires:
 
@@ -154,17 +154,17 @@ CMakeFiles/cdn.dir/deploy.cpp.o.provides.build: CMakeFiles/cdn.dir/deploy.cpp.o
 
 
 CMakeFiles/cdn.dir/strlib.cc.o: CMakeFiles/cdn.dir/flags.make
-CMakeFiles/cdn.dir/strlib.cc.o: /home/full/Desktop/SDK-gcc/cdn/strlib.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cdn.dir/strlib.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/strlib.cc.o -c /home/full/Desktop/SDK-gcc/cdn/strlib.cc
+CMakeFiles/cdn.dir/strlib.cc.o: /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/strlib.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cdn.dir/strlib.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/strlib.cc.o -c /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/strlib.cc
 
 CMakeFiles/cdn.dir/strlib.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cdn.dir/strlib.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/cdn/strlib.cc > CMakeFiles/cdn.dir/strlib.cc.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/strlib.cc > CMakeFiles/cdn.dir/strlib.cc.i
 
 CMakeFiles/cdn.dir/strlib.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cdn.dir/strlib.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/cdn/strlib.cc -o CMakeFiles/cdn.dir/strlib.cc.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/strlib.cc -o CMakeFiles/cdn.dir/strlib.cc.s
 
 CMakeFiles/cdn.dir/strlib.cc.o.requires:
 
@@ -178,17 +178,17 @@ CMakeFiles/cdn.dir/strlib.cc.o.provides.build: CMakeFiles/cdn.dir/strlib.cc.o
 
 
 CMakeFiles/cdn.dir/SelectLoc.cpp.o: CMakeFiles/cdn.dir/flags.make
-CMakeFiles/cdn.dir/SelectLoc.cpp.o: /home/full/Desktop/SDK-gcc/cdn/SelectLoc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cdn.dir/SelectLoc.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/SelectLoc.cpp.o -c /home/full/Desktop/SDK-gcc/cdn/SelectLoc.cpp
+CMakeFiles/cdn.dir/SelectLoc.cpp.o: /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/SelectLoc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cdn.dir/SelectLoc.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/SelectLoc.cpp.o -c /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/SelectLoc.cpp
 
 CMakeFiles/cdn.dir/SelectLoc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cdn.dir/SelectLoc.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/cdn/SelectLoc.cpp > CMakeFiles/cdn.dir/SelectLoc.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/SelectLoc.cpp > CMakeFiles/cdn.dir/SelectLoc.cpp.i
 
 CMakeFiles/cdn.dir/SelectLoc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cdn.dir/SelectLoc.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/cdn/SelectLoc.cpp -o CMakeFiles/cdn.dir/SelectLoc.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/SelectLoc.cpp -o CMakeFiles/cdn.dir/SelectLoc.cpp.s
 
 CMakeFiles/cdn.dir/SelectLoc.cpp.o.requires:
 
@@ -202,17 +202,17 @@ CMakeFiles/cdn.dir/SelectLoc.cpp.o.provides.build: CMakeFiles/cdn.dir/SelectLoc.
 
 
 CMakeFiles/cdn.dir/RouteTraffic.cpp.o: CMakeFiles/cdn.dir/flags.make
-CMakeFiles/cdn.dir/RouteTraffic.cpp.o: /home/full/Desktop/SDK-gcc/cdn/RouteTraffic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cdn.dir/RouteTraffic.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/RouteTraffic.cpp.o -c /home/full/Desktop/SDK-gcc/cdn/RouteTraffic.cpp
+CMakeFiles/cdn.dir/RouteTraffic.cpp.o: /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/RouteTraffic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cdn.dir/RouteTraffic.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cdn.dir/RouteTraffic.cpp.o -c /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/RouteTraffic.cpp
 
 CMakeFiles/cdn.dir/RouteTraffic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cdn.dir/RouteTraffic.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/cdn/RouteTraffic.cpp > CMakeFiles/cdn.dir/RouteTraffic.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/RouteTraffic.cpp > CMakeFiles/cdn.dir/RouteTraffic.cpp.i
 
 CMakeFiles/cdn.dir/RouteTraffic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cdn.dir/RouteTraffic.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/cdn/RouteTraffic.cpp -o CMakeFiles/cdn.dir/RouteTraffic.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/full/Desktop/SDK-gcc/SDK-gcc/cdn/RouteTraffic.cpp -o CMakeFiles/cdn.dir/RouteTraffic.cpp.s
 
 CMakeFiles/cdn.dir/RouteTraffic.cpp.o.requires:
 
@@ -238,20 +238,20 @@ cdn_OBJECTS = \
 # External object files for target cdn
 cdn_EXTERNAL_OBJECTS =
 
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/graph.cpp.o
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/io.cpp.o
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/cdn.cpp.o
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/deploy.cpp.o
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/strlib.cc.o
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/SelectLoc.cpp.o
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/RouteTraffic.cpp.o
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/build.make
-/home/full/Desktop/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/full/Desktop/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/full/Desktop/SDK-gcc/bin/cdn"
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/graph.cpp.o
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/io.cpp.o
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/cdn.cpp.o
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/deploy.cpp.o
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/strlib.cc.o
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/SelectLoc.cpp.o
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/RouteTraffic.cpp.o
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/build.make
+/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn: CMakeFiles/cdn.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cdn.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/cdn.dir/build: /home/full/Desktop/SDK-gcc/bin/cdn
+CMakeFiles/cdn.dir/build: /home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn
 
 .PHONY : CMakeFiles/cdn.dir/build
 
@@ -270,6 +270,6 @@ CMakeFiles/cdn.dir/clean:
 .PHONY : CMakeFiles/cdn.dir/clean
 
 CMakeFiles/cdn.dir/depend:
-	cd /home/full/Desktop/SDK-gcc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/full/Desktop/SDK-gcc/cdn /home/full/Desktop/SDK-gcc/cdn /home/full/Desktop/SDK-gcc/build /home/full/Desktop/SDK-gcc/build /home/full/Desktop/SDK-gcc/build/CMakeFiles/cdn.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/full/Desktop/SDK-gcc/SDK-gcc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/full/Desktop/SDK-gcc/SDK-gcc/cdn /home/full/Desktop/SDK-gcc/SDK-gcc/cdn /home/full/Desktop/SDK-gcc/SDK-gcc/build /home/full/Desktop/SDK-gcc/SDK-gcc/build /home/full/Desktop/SDK-gcc/SDK-gcc/build/CMakeFiles/cdn.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cdn.dir/depend
 

@@ -16,6 +16,8 @@ using std::cout; using std::endl;
 
 #include "graph.h"
 
+#include "SelectLoc.h"
+
 void PrintPath(const vector<int> & nodes_on_path)
 {
 	for (auto & index : nodes_on_path) {
@@ -64,7 +66,10 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 
 
 	//服务器集合
-	vector<int> servers{ 9, 20, 8, 2, 4, 40, 16 };
+//	vector<int> servers{ 9, 20, 8, 2, 4, 40, 16 };
+	ServerLoc serverloc = ServerLoc(4, node_num);
+	serverloc.SelectLoc(g, node_num, 4);
+
 	//寻路
 //	print_time("dij");
 //	srand(time(NULL));
@@ -91,7 +96,7 @@ void deploy_server(char * topo[MAX_EDGE_NUM], int line_num, char * filename)
 	//选路
 	int total_traffic = 0;
 	vector<Route_transfer> route_transfers;
-	select_route(customers,servers,g, total_traffic, route_transfers);
+	//select_route(customers, serverloc.servers, g, total_traffic, route_transfers);
 
 
 	// 需要输出的内容

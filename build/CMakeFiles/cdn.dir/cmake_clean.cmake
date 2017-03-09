@@ -6,8 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cdn.dir/strlib.cc.o"
   "CMakeFiles/cdn.dir/SelectLoc.cpp.o"
   "CMakeFiles/cdn.dir/RouteTraffic.cpp.o"
-  "/home/full/Desktop/SDK-gcc/bin/cdn.pdb"
-  "/home/full/Desktop/SDK-gcc/bin/cdn"
+  "/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn.pdb"
+  "/home/full/Desktop/SDK-gcc/SDK-gcc/bin/cdn"
 )
 
 # Per-language clean rules from dependency scanning.
