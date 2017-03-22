@@ -1,0 +1,1 @@
+/usr/bin/c++    -O0 -Wall -g -ggdb -std=c++11   CMakeFiles/cdn.dir/MCMF.cpp.o CMakeFiles/cdn.dir/io.cpp.o CMakeFiles/cdn.dir/cdn.cpp.o CMakeFiles/cdn.dir/util.cc.o CMakeFiles/cdn.dir/server.cpp.o CMakeFiles/cdn.dir/deploy.cpp.o  -o /home/sjl/workspace/SDK-gcc/SDK-gcc/bin/cdn -rdynamic 
