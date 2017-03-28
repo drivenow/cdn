@@ -113,9 +113,10 @@ inline void doVariant(map<int,vector<float> > w_graph, Unit &gsource, Unit &gdes
 inline void doCross( Unit &gsource, Unit &gdest, Unit &child1, Unit &child2, int cross_it,int rseed){
 	int gene_len = gsource.gn.size();
 
-	int p1,p2=-1;
+	int p1,p2;
 	p1 = rand()%gene_len;
-	while(p1!=p2){
+	p2 = rand()%gene_len;
+	while(p1==p2){
 		p2 = rand()%gene_len;
 	}
 
