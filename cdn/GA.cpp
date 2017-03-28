@@ -303,22 +303,23 @@ void mutation(map<int,vector<float> > w_graph, vector<Unit> &popula, vector<int>
 void cross(vector<Unit> &popula, vector<int> &best_server, vector<vector<int>> &best_path, int &best_cost, int &best_idx, int &indNum, int &fit_sum, int rseed){
 	srand(unsigned(time(0))+rseed);
 	int cross_ave = int(cross_rate*groupnum);
-	int fa,ma=-1;
+	int fa,ma;
 	int fit_cost,transfer_cost;
 	bool find_so =false;
 
 	for(int j = 0; j < cross_ave; j++){
 		fa = rand()%groupnum;
-		while(fa!=ma){
+		ma = rand()%groupnum;
+		while(fa==ma){
 			ma = rand()%groupnum;
 		}
 		cout<<"cross"<<j<<endl;
 		if(indNum==community)  {cout<<"indNum:"<<j<<endl;}
-		doCross(popula[ma], popula[fa], popula[indNum+1],popula[indNum+2],1,rseed+j);
-		find_so = computeFit(popula[indNum+1].gn, paths, valid_server, valid_node, transfer_cost, fit_cost, server_unit_cost);
-		popula[indNum+1].vn = valid_node;
-		popula[indNum+1].vn_len = valid_node.size();
-		popula[indNum+1].fn = fit_cost;
+		doCross(popula[ma], popula[fa], popula[indNum],popula[indNum+1],1,rseed+j);
+		find_so = computeFit(popula[indNum].gn, paths, valid_server, valid_node, transfer_cost, fit_cost, server_unit_cost);
+		popula[indNum].vn = valid_node;
+		popula[indNum].vn_len = valid_node.size();
+		popula[indNum].fn = fit_cost;
 		fit_sum += fit_cost;
 		if(find_so){
 					find_so_all = true;
@@ -337,16 +338,16 @@ void cross(vector<Unit> &popula, vector<int> &best_server, vector<vector<int>> &
 					}
 				}
 
-		find_so = computeFit(popula[indNum+2].gn, paths, valid_server, valid_node, transfer_cost, fit_cost, server_unit_cost);
-		popula[indNum+2].vn = valid_node;
-		popula[indNum+2].vn_len = valid_node.size();
-		popula[indNum+2].fn = fit_cost;
+		find_so = computeFit(popula[indNum+1].gn, paths, valid_server, valid_node, transfer_cost, fit_cost, server_unit_cost);
+		popula[indNum+1].vn = valid_node;
+		popula[indNum+1].vn_len = valid_node.size();
+		popula[indNum+1].fn = fit_cost;
 		fit_sum += fit_cost;
 		if(find_so){
 			find_so_all = true;
 			if(fit_cost > best_cost){
 				best_cost = fit_cost;
-				best_idx = indNum;
+				best_idx = indNum+1;
 //					best_server = popula[indNum].gn;
 				best_path = paths;
 				cout<<"total_cost:"<<base_cost-best_cost<<endl;
