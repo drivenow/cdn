@@ -306,11 +306,12 @@ void cross(vector<Unit> &popula, vector<int> &best_server, vector<vector<int>> &
 	int fa,ma=-1;
 	int fit_cost,transfer_cost;
 	bool find_so =false;
-	fa = rand()%groupnum;
-	while(fa!=ma){
-		ma = rand()%groupnum;
-	}
+
 	for(int j = 0; j < cross_ave; j++){
+		fa = rand()%groupnum;
+		while(fa!=ma){
+			ma = rand()%groupnum;
+		}
 		cout<<"cross"<<j<<endl;
 		if(indNum==community)  {cout<<"indNum:"<<j<<endl;}
 		doCross(popula[ma], popula[fa], popula[indNum+1],popula[indNum+2],1,rseed+j);
