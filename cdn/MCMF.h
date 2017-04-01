@@ -46,7 +46,7 @@ int dataLoad(record* edge,int flow[], char ** topo, int line_num, int &n ,int &s
 void serverLoad(record* edge, int flow[], vector<int> servers, int s, int  pointer[], int cl);
 void serverLoadOne(record* edge, int flow[], int server, int s, int  pointer[], int cl);
 bool spfa(record* edge, int flow[], vector<int> & path, int &ans, int pointer[], int n, int s,int t,map<int,int> &valid_server, map<int, vector<int>> &valid_node);
-bool spfa_v2(int &customer_demand, vector <bool> &nodes_viz, vector<pair<int, int>> &cust_demand_vec, record* edge, int flow[], vector<int> & path, int &ans, int pointer[], int n, int s,int t,map<int,int> &valid_server, map<int,vector<int>> &valid_node,int count);
+bool spfa_v2(vector<int> &cust_transfer_vec, int &customer_demand, vector <bool> &nodes_viz, vector<pair<int, int>> &cust_demand_vec, record* edge, int flow[], vector<int> & path, int &ans, int pointer[], int n, int s,int t,map<int,int> &valid_server, map<int,vector<int>> &valid_node,int count);
 int findCost_v2(vector<pair<int, int>> &cust_demand_vec,record* edge, int flow[], vector<vector<int>> &paths, map<int,int> &valid_server, map<int, vector<int>> &valid_node, int pointer[], int customer_demand, int n, int s,int t,int &transfer_cost);
 int findCost(record* edge, int flow[], vector<vector<int>> &paths, map<int,int> &valid_server, map<int,vector<int>> &valid_node, int pointer[], int customer_demand, int n, int s,int t,int &transfer_cost);
 

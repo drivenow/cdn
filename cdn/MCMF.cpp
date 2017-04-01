@@ -233,7 +233,7 @@ bool spfa(record* edge, int flow[], vector<int> & path, int &ans, int pointer[],
 }
 
 
-bool spfa_v2(int &customer_demand, vector <bool> &nodes_viz, vector<pair<int, int>> &cust_demand_vec, record* edge, int flow[], vector<int> & path, int &ans, int pointer[], int n, int s,int t,map<int,int> &valid_server, map<int,vector<int>> &valid_node, int count) {
+bool spfa_v2(vector<int> &cust_transfer_vec, int &customer_demand, vector <bool> &nodes_viz, vector<pair<int, int>> &cust_demand_vec, record* edge, int flow[], vector<int> & path, int &ans, int pointer[], int n, int s,int t,map<int,int> &valid_server, map<int,vector<int>> &valid_node, int count) {
 	int  aug, k, p;
 	int transfer_cost = 0;
 	int locate_cost = 0;
@@ -308,19 +308,23 @@ bool spfa_v2(int &customer_demand, vector <bool> &nodes_viz, vector<pair<int, in
     }
     cout<<"maybe from "<<server<<" to customer "<<agency<<" transfer "<<aug<<endl;
     //
-    transfer_cost = dist[t] * aug;
+    transfer_cost = cust_transfer_vec[agency]+dist[t] * aug;//当前的传输费用，加上新传输费用
+//    transfer_cost = dist[t] * aug;
     locate_cost = server_price;//部署费用
-    if(locate_cost<transfer_cost){
+    if(locate_cost < transfer_cost){
     	//路径终点加入服务器列表
     	cout<<"high tranfer cost"<<endl;
-    	nodes_viz[cust_demand_vec[0].first] = 1;
-    	serverLoadOne(edge ,flow, cust_demand_vec[0].first, s, pointer, cl);
-		cl+=2;
+//    	nodes_viz[cust_demand_vec[0].first] = 1;
+//    	serverLoadOne(edge ,flow, cust_demand_vec[0].first, s, pointer, cl);
+		nodes_viz[agency] = 1;
+		serverLoadOne(edge ,flow, agency, s, pointer, cl);
+    	cl+=2;
 		cout<<"add server"<<cust_demand_vec[0].first<<endl;
 		return false;
     }
     else{
     	ans += dist[t] * aug;//总的传输费用
+    	cust_transfer_vec[agency] += dist[t] * aug;//传送到customer的费用
     	//选择改传输方式，更新流量和路径表
         int agency_idx_sub = 0;
         for (p=pre[t]; p; p=pre[edge[p^1].v]) {
@@ -337,6 +341,7 @@ bool spfa_v2(int &customer_demand, vector <bool> &nodes_viz, vector<pair<int, in
             flow[p] -= aug;
 //            flow[p^1] += aug;
         }
+
         if (valid_server.find(server)!=valid_server.end()){
 			valid_server[server]+=aug;
 		}
@@ -386,11 +391,13 @@ int findCost_v2(vector<pair<int, int>> &cust_demand_vec, record* edge, int flow[
 	cl+=2;
 	nodes_viz[cust_demand_vec[0].first] = 1;
 
+	vector<int> cust_transfer_vec(node_num);
+
 
 	while (customer_demand!=0){
 		vector<int> path;
 		cout<<"spfa:"<<count++<<"cl:"<<cl<<endl;
-		flag = spfa_v2(customer_demand,nodes_viz,cust_demand_vec,edge, flow , path, transfer_cost, pointer,n,s,t,valid_server,valid_node,count);
+		flag = spfa_v2(cust_transfer_vec, customer_demand,nodes_viz,cust_demand_vec,edge, flow , path, transfer_cost, pointer,n,s,t,valid_server,valid_node,count);
 		if (flag==true){
 			paths.push_back(path);
 		}
@@ -402,7 +409,7 @@ int findCost_v2(vector<pair<int, int>> &cust_demand_vec, record* edge, int flow[
 		find_so = false;
 	}
 	else{
-		cout<<"dinf solution"<<endl;
+		cout<<"findCost solution"<<endl;
 	}
 //	printf("total cost: %d\n", ans);
 	return customer_demand;
@@ -440,7 +447,7 @@ int findCost(record* edge, int flow[], vector<vector<int>> &paths, map<int,int> 
 		find_so = false;
 	}
 	else{
-		cout<<"dinf solution"<<endl;
+		cout<<"findCost solution"<<endl;
 	}
 //	printf("total cost: %d\n", ans);
 	return customer_demand;

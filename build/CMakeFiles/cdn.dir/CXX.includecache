@@ -153,6 +153,8 @@ signal.h
 /home/full/Desktop/teambuilder-322/cdn/util.cc
 util.h
 /home/full/Desktop/teambuilder-322/cdn/util.h
+MCMF.h
+/home/full/Desktop/teambuilder-322/cdn/MCMF.h
 vector
 -
 string
@@ -164,6 +166,8 @@ stdio.h
 stdlib.h
 -
 unistd.h
+-
+iostream
 -
 
 /home/full/Desktop/teambuilder-322/cdn/util.h
