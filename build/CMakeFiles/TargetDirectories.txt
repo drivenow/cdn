@@ -1,0 +1,3 @@
+/home/full/Desktop/cdn-submit/build/CMakeFiles/edit_cache.dir
+/home/full/Desktop/cdn-submit/build/CMakeFiles/rebuild_cache.dir
+/home/full/Desktop/cdn-submit/build/CMakeFiles/cdn.dir
